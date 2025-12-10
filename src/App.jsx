@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css";
 import {
   BarChart,
   Bar,
@@ -47,27 +48,21 @@ const EVChart = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 p-8">
-      <div className="max-w-6xl mx-auto">
+    <div className="app-root">
+      <div className="container">
         {/* Header */}
-        <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Zap className="w-12 h-12 text-yellow-400 animate-pulse" />
-            <h1 className="text-5xl font-bold text-white">
-              Chandigarh EV Growth
-            </h1>
-            <Zap className="w-12 h-12 text-yellow-400 animate-pulse" />
+        <div className="header">
+          <div className="brand">
+            <Zap size={44} className="icon" />
+            <h1 className="title">Chandigarh EV Growth</h1>
+            <Zap size={44} className="icon" />
           </div>
-          <p className="text-yellow-300 text-xl">
-            Electric Vehicle Registrations (2020-2024)
-          </p>
-          <p className="text-gray-300 mt-2">
-            Leading India's Electric Mobility Revolution
-          </p>
+          <p className="subtitle">Electric Vehicle Registrations (2020-2024)</p>
+          <p className="muted">Leading India's Electric Mobility Revolution</p>
         </div>
 
         {/* Main Chart */}
-        <div className="bg-gray-800 bg-opacity-50 rounded-3xl p-8 shadow-2xl backdrop-blur-sm border border-yellow-400/30 mb-8">
+        <div className="chart-card">
           <ResponsiveContainer width="100%" height={400}>
             <BarChart data={data}>
               <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
@@ -88,66 +83,60 @@ const EVChart = () => {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-gradient-to-br from-yellow-500 to-orange-600 rounded-2xl p-6 shadow-xl">
-            <div className="text-white text-center">
-              <p className="text-sm font-semibold mb-2">Total EVs Since 2020</p>
-              <p className="text-4xl font-bold">8,469</p>
+        <div className="stats-grid">
+          <div className="stat-card yellow">
+            <div className="stat-content">
+              <p className="stat-label">Total EVs Since 2020</p>
+              <p className="stat-value">8,469</p>
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-6 shadow-xl">
-            <div className="text-white text-center">
-              <p className="text-sm font-semibold mb-2">Two-Wheelers</p>
-              <p className="text-4xl font-bold">5,442</p>
+          <div className="stat-card blue">
+            <div className="stat-content">
+              <p className="stat-label">Two-Wheelers</p>
+              <p className="stat-value">5,442</p>
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl p-6 shadow-xl">
-            <div className="text-white text-center">
-              <p className="text-sm font-semibold mb-2">Four-Wheelers</p>
-              <p className="text-4xl font-bold">3,027</p>
+          <div className="stat-card green">
+            <div className="stat-content">
+              <p className="stat-label">Four-Wheelers</p>
+              <p className="stat-value">3,027</p>
             </div>
           </div>
         </div>
 
         {/* Key Highlights */}
-        <div className="bg-gray-800 bg-opacity-50 rounded-3xl p-8 shadow-2xl backdrop-blur-sm border border-yellow-400/30">
-          <h2 className="text-2xl font-bold text-yellow-400 mb-6 flex items-center gap-2">
-            <Zap className="w-6 h-6" />
-            Key Highlights
+        <div className="highlights">
+          <h2 className="highlights-title">
+            <Zap size={18} className="icon-inline" /> Key Highlights
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-white">
-            <div className="flex items-start gap-3">
-              <span className="text-yellow-400 text-2xl">⚡</span>
-              <p className="text-sm">
-                <span className="font-bold text-yellow-300">2024 Growth:</span>{" "}
-                3,078 EVs registered, showing strong momentum
+          <div className="highlights-grid">
+            <div className="highlight">
+              <span className="emoji">⚡</span>
+              <p>
+                <strong>2024 Growth:</strong> 3,078 EVs registered, showing
+                strong momentum
               </p>
             </div>
-            <div className="flex items-start gap-3">
-              <span className="text-yellow-400 text-2xl">🏆</span>
-              <p className="text-sm">
-                <span className="font-bold text-yellow-300">
-                  National Leader:
-                </span>{" "}
-                Ranked #1 in India Electric Mobility Index 2024
+            <div className="highlight">
+              <span className="emoji">🏆</span>
+              <p>
+                <strong>National Leader:</strong> Ranked #1 in India Electric
+                Mobility Index 2024
               </p>
             </div>
-            <div className="flex items-start gap-3">
-              <span className="text-yellow-400 text-2xl">📈</span>
-              <p className="text-sm">
-                <span className="font-bold text-yellow-300">
-                  6,592% Growth:
-                </span>{" "}
-                From 46 EVs in 2020 to 3,078 in 2024
+            <div className="highlight">
+              <span className="emoji">📈</span>
+              <p>
+                <strong>6,592% Growth:</strong> From 46 EVs in 2020 to 3,078 in
+                2024
               </p>
             </div>
-            <div className="flex items-start gap-3">
-              <span className="text-yellow-400 text-2xl">🎯</span>
-              <p className="text-sm">
-                <span className="font-bold text-yellow-300">2027 Goal:</span>{" "}
-                Become India's "Model EV City"
+            <div className="highlight">
+              <span className="emoji">🎯</span>
+              <p>
+                <strong>2027 Goal:</strong> Become India's "Model EV City"
               </p>
             </div>
           </div>
